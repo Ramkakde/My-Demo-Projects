@@ -1,0 +1,1170 @@
+﻿/**START TABLE**/
+.figtable-container {
+    width: 100%;
+    border: 2px solid #444;
+    background-color: #FFF;
+    overflow: hidden;
+}
+
+    .figtable-container:not(:last-child) {
+        margin-bottom: 2px;
+    }
+
+.figtable {
+    padding-right: 21px;
+}
+
+    .figtable table {
+        border-spacing: 0;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+
+
+
+.figtable-header > table > thead > tr > th, .figtable-body > table > tbody > tr > td {
+    position: relative;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid;
+    border-right: 2px solid;
+    border-color: #8c8c8c;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.figtable-header > table > thead > tr:not(:first-child) > th {
+    border-top: 1px solid #CCC;
+    background: #444;
+    color: white;
+    font-weight: normal;
+}
+
+.figtable-body > table > tbody > tr:nth-child(even) {
+    background-color: #eef9ec;
+}
+
+.figtable td {
+    padding: 4px 8px;
+}
+
+.figtable tr:last-child > th,
+.figtable tr:last-child > td {
+    border-bottom: none;
+}
+
+/*.figtable tr > th:last-child,
+    .figtable tr > td:last-child {
+        border-right: none;
+    }*/
+
+.figtable-header, .figtable-footer, .figtable-body {
+    position: relative;
+}
+
+.figtable-header, .figtable-footer {
+    margin-right: -25px;
+    padding-right: 21px;
+}
+
+.figtable-header, .figtable-footer {
+    border-width: 0px;
+    border-style: solid;
+    border-color: #CCC;
+}
+
+.figtable-header {
+    background-color: #F8F8F8;
+    text-transform: uppercase;
+    color: #555;
+    border-bottom: 2px solid #444;
+    font-size: 13px;
+    font-family: Tahoma;
+}
+
+.figtable-footer {
+    padding: 5px;
+    border-top: 2px solid #444;
+    padding-right: 12px;
+}
+
+.figtable-body {
+    max-height: 500px;
+    overflow-y: scroll;
+    margin-right: -21px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+    .figtable-body tr.rowcollapse:nth-last-child(-n+2) td {
+        border-bottom-width: 0;
+    }
+
+    .figtable-body tr.rowexpand,
+    .figtable-body tr.rowexpand:hover {
+        background-color: #DDEDED;
+        font-weight: 700;
+    }
+
+        .figtable-body tr.rowexpand td i.fa-plus:before {
+            content: "\f068";
+        }
+
+    .figtable-body tr.rowcollapse + tr {
+        display: none;
+    }
+
+.figtable-header th.sort {
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+    .figtable-header th.sort span {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        margin-top: -6px;
+    }
+
+.figtable .figtable-body td .img {
+    margin-top: -5px;
+    margin-bottom: -4px;
+    margin-right: 5px;
+    height: 40px;
+    width: 40px;
+    padding: 4px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+    .figtable .figtable-body td .img img {
+        box-shadow: 0 0 3px #333;
+        border-radius: 25px;
+        height: 100%;
+        width: 100%;
+    }
+
+.figtable-body > table > tbody > tr:hover,
+.figtable-body > table > tr:hover {
+    background-color: rgba(15,48,105,0.04);
+}
+
+.table-header {
+    background-color: #2e4dde;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+/**END TABLE**/
+
+/*** FIGPAGING START ***/
+ul.figpaging {
+    padding: 0;
+    margin: 2px 0 0 0;
+    list-style-type: none;
+    font-family: Tahoma;
+    font-size: 8pt;
+    position: relative;
+}
+
+    ul.figpaging li, ul.figpaging li button, ul.figpaging li select {
+        display: inline-block;
+    }
+
+        ul.figpaging li button, ul.figpaging li select {
+            height: 27px;
+            min-width: 27px;
+            line-height: 20px;
+            vertical-align: middle;
+            text-align: center;
+            color: #000;
+            padding: 3px;
+            border: 1px solid #8c8c8c;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            background: -webkit-linear-gradient(bottom, #e5e1e1 36%,#f9fafa 100%);
+            background: -moz-linear-gradient(to bottom, #e5e1e1 36%,#f9fafa 100%);
+            background: -o-linear-gradient(to bottom, #e5e1e1 36%,#f9fafa 100%);
+            background: -ms-linear-gradient(to bottom, #e5e1e1 36%,#f9fafa 100%);
+            background: linear-gradient(to bottom, #e5e1e1 36%,#f9fafa 100%);
+            background-color: #EAE8E8;
+            background-position: 50% 50%;
+        }
+
+    ul.figpaging > li:not(:first-child) > button, ul.figpaging > li select {
+        border-left: none;
+    }
+
+    ul.figpaging li:first-child button {
+        border-radius: 3px 0 0 3px;
+    }
+
+    ul.figpaging li:last-child button, ul.figpaging li select {
+        border-radius: 0 3px 3px 0;
+    }
+
+
+    ul.figpaging li select, ul.figpaging button.colored {
+        background: #D9D9D9;
+    }
+
+    ul.figpaging li button.active, ul.figpaging li button:hover {
+        color: #FFF;
+        background: #D9D9D9;
+        background: -webkit-linear-gradient(bottom, #515151 36%,#282a2a 100%);
+        background: -moz-linear-gradient(bottom, #515151 36%,#282a2a 100%);
+        background: -o-linear-gradient(bottom, #515151 36%,#282a2a 100%);
+        background: -ms-linear-gradient(bottom, #515151 36%,#282a2a 100%);
+        background: linear-gradient(to bottom, #515151 36%,#282a2a 100%);
+    }
+
+    ul.figpaging li button.disabled, ul.figpaging li button.active {
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    ul.figpaging li button.active {
+        font-weight: 600;
+        box-shadow: 0 0 1px #FFF inset;
+    }
+
+span.figpagingtext {
+    font-weight: 600;
+    font-size: 80%;
+    float: right;
+    margin-top: 8px;
+}
+
+/*** FIGPAGING END ***/
+
+/*** FIG RADIO CHECKBOX START ***/
+.figradio,
+.figcheckbox {
+    padding-left: 18px;
+    position: relative;
+    margin: 0;
+    vertical-align: middle;
+    /*margin-top: 5px;
+    margin-bottom: 5px;*/
+}
+
+.figradio {
+    margin-top: 5px !important;
+}
+
+    .figradio input[type="radio"],
+    .figcheckbox input[type="checkbox"] {
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+    }
+
+        .figradio input[type="radio"] + span,
+        .figcheckbox input[type="checkbox"] + span {
+            font-weight: normal;
+            display: inline-block;
+            z-index: 0;
+            margin-top: -2px;
+            vertical-align: top;
+        }
+
+            .figradio input[type="radio"] + span:not(:empty),
+            .figcheckbox input[type="checkbox"] + span:not(:empty) {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            .figradio input[type="radio"] + span:before,
+            .figcheckbox input[type="checkbox"] + span:before {
+                content: '';
+                position: absolute;
+                height: 14px;
+                line-height: 14px;
+                border: 2px solid #555;
+                width: 14px;
+                display: inline-block;
+                left: 0;
+                top: 2px;
+                border-radius: 3px;
+            }
+
+        .figradio input[type="radio"]:checked + span:after,
+        .figcheckbox input[type="checkbox"]:checked + span:after {
+            content: '';
+            position: absolute;
+            height: 6px;
+            width: 6px;
+            border: 3px solid transparent;
+            line-height: 6px;
+            top: 0;
+            left: 0;
+            margin-left: 4px;
+            margin-top: 6px;
+        }
+
+        .figcheckbox input[type="checkbox"]:checked + span:after {
+            border-style: none;
+            background-color: transparent;
+            border-width: 3px;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            height: 6px;
+            width: 14px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            top: -3px;
+            left: -1px;
+        }
+
+        .figradio input[type="radio"] + span:before,
+        .figradio input[type="radio"]:checked + span:after {
+            border-radius: 50%;
+        }
+
+        .figradio input[type="radio"]:checked + span:before,
+        .figcheckbox input[type="checkbox"]:checked + span:before,
+        .figradio input[type="radio"]:checked + span:after,
+        .figcheckbox input[type="checkbox"]:checked + span:after {
+            border-color: #1D5A9E;
+            background-color: #FFF;
+        }
+
+        .figradio input[type="radio"]:disabled + span:before,
+        .figcheckbox input[type="checkbox"]:disabled + span:before,
+        .figradio input[type="radio"]:disabled + span:after,
+        .figcheckbox input[type="checkbox"]:disabled + span:after {
+            opacity: 0.8;
+            background-color: #DDD;
+        }
+
+        .figradio input[type="radio"]:disabled + span,
+        .figcheckbox input[type="checkbox"]:disabled + span {
+            cursor: not-allowed;
+        }
+
+        .figradio input[type="radio"]:not(:disabled):hover,
+        .figcheckbox input[type="checkbox"]:not(:disabled):hover,
+        .figradio input[type="radio"]:not(:disabled) + span:before,
+        .figcheckbox input[type="checkbox"]:not(:disabled) + span:before {
+            cursor: pointer;
+        }
+
+            .figradio input[type="radio"]:not(:disabled):hover + span:before,
+            .figcheckbox input[type="checkbox"]:not(:disabled):hover + span:before,
+            .figradio input[type="radio"]:not(:disabled):active + span:before,
+            .figcheckbox input[type="checkbox"]:not(:disabled):active + span:before,
+            .figradio input[type="radio"]:not(:disabled):focus + span:before,
+            .figcheckbox input[type="checkbox"]:not(:disabled):focus + span:before {
+                box-shadow: 0 0 12px rgba(0,0,0,0.5);
+                border-color: #1D5A9E;
+            }
+
+/*** FIG RADIO CHECKBOX END ***/
+
+/* NOTIFICATOIN START */
+
+
+.fignotification {
+    z-index: 100001;
+}
+
+    .fignotification ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+        .fignotification ul li {
+            color: black;
+            display: block;
+            padding: 15px 15px 15px 30px;
+            border: 5px solid;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+            margin-bottom: 5px;
+            position: relative;
+            cursor: pointer;
+            background: #FFD;
+            font-weight: 700;
+        }
+
+            .fignotification ul li span.static:after {
+                content: '×';
+                position: absolute;
+                bottom: 50%;
+                right: -10px;
+                top: -10px;
+                line-height: 16px;
+                color: #FFF;
+                font-weight: 700;
+                height: 17px;
+                width: 17px;
+                border-radius: 50%;
+                background-color: #DE203F;
+                text-align: center;
+                padding-left: 1px;
+            }
+
+
+            .fignotification ul li.fignotification-primary:before,
+            .fignotification ul li.fignotification-success:before,
+            .fignotification ul li.fignotification-info:before,
+            .fignotification ul li.fignotification-warning:before,
+            .fignotification ul li.fignotification-danger:before {
+                position: absolute;
+                font: normal normal normal 14px/1 FontAwesome;
+                left: 0;
+                top: 0;
+                padding-left: 5px;
+                padding-top: 15px;
+                font-size: 20px;
+            }
+
+            .fignotification ul li.fignotification-primary:before {
+                content: '\f058';
+                color: #224f77;
+            }
+
+            .fignotification ul li.fignotification-success {
+                border-color: #398439;
+                color: #398439;
+            }
+
+                .fignotification ul li.fignotification-success:before {
+                    content: '\f058';
+                    color: #255625;
+                }
+
+            .fignotification ul li.fignotification-info {
+                border-color: #31b0d5;
+                color: #238aa9;
+            }
+
+                .fignotification ul li.fignotification-info:before {
+                    content: '\f05a';
+                    color: #238aa9;
+                }
+
+
+            .fignotification ul li.fignotification-warning {
+                border-color: #f0ad4e;
+                color: #f0ad4e;
+            }
+
+                .fignotification ul li.fignotification-warning:before {
+                    content: '\f071';
+                    color: #bc7410;
+                }
+
+            .fignotification ul li.fignotification-danger {
+                border-color: #ac2925;
+                color: #ac2925;
+            }
+
+                .fignotification ul li.fignotification-danger:before {
+                    content: '\f057';
+                    color: #d74742;
+                }
+
+
+/* NOTIFICATOIN START */
+
+/* LOADER CSS START */
+
+.figloader {
+    position: relative;
+}
+
+    .figloader body {
+        overflow: hidden;
+    }
+/*.figloader * {
+        z-index: 0;
+    }*/
+
+.figloaderlayer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    filter: alpha(opacity=1);
+    background-color: #000;
+    z-index: 1000001;
+}
+
+html.figloaderlayer body {
+    position: fixed !important;
+}
+
+.figloader:before {
+    content: '';
+    position: absolute;
+    z-index: 1000002;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border-width: 6px;
+    border-color: #FFF;
+    border-right-color: #587;
+    margin-top: -20px;
+    left: 50%;
+    margin-left: -20px;
+    border-style: solid;
+    border-radius: 50%;
+    top: 200px;
+    animation: spinnerRotate 2s infinite linear;
+    -moz-animation: spinnerRotate 2s infinite linear;
+    -ms-animation: spinnerRotate 2s infinite linear;
+    -o-animation: spinnerRotate 2s infinite linear;
+}
+
+.figloader:after {
+    content: attr(data-loader-content);
+    position: absolute;
+    z-index: 1000003;
+    top: 200px;
+    margin-top: 20px;
+    text-align: center;
+    left: 0;
+    width: 100%;
+    color: #000;
+    text-transform: capitalize;
+    font-size: 140%;
+    /*font-weight: 600;*/
+}
+
+@-webkit-keyframes spinnerRotate {
+    from {
+        -webkit-transform: rotate(0deg);
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+@-moz-keyframes spinnerRotate {
+    from {
+        -moz-transform: rotate(0deg);
+        -moz-transform: rotate(-360deg);
+    }
+}
+
+@-ms-keyframes spinnerRotate {
+    from {
+        -ms-transform: rotate(0deg);
+        -ms-transform: rotate(-360deg);
+    }
+}
+
+.loading {
+    position: relative;
+}
+
+    .loading:before {
+        position: absolute;
+        content: '';
+        font-size: 22px;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(0,0,0,0.45);
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    .loading:after {
+        position: absolute;
+        content: "";
+        background-image: url('/Assets/Images/loading.gif');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        background-color: transparent;
+        border: 1px solid transparent;
+        display: block;
+        top: 50%;
+        left: 50%;
+        padding: 5px;
+        margin-left: -20px;
+        margin-top: -20px;
+        z-index: 11;
+    }
+
+body.loading,
+body.loading:before {
+    position: fixed;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+/* LOADER CSS END */
+
+/* THIS CSS USED FOR CONFIRMATION BOX START */
+
+
+.ss-overlayer-container {
+    max-width: 450px;
+    background: white;
+    z-index: 0;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    box-shadow: 0 5px 15px #000;
+}
+
+.model-popup-container {
+    max-width: 50% !important;
+}
+
+.model-popup-body {
+    max-height: none !important;
+    padding: 20px;
+}
+
+.ss-overlayer-container-body {
+    max-height: 200px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.ss-overlayer-container-footer {
+    padding: 10px 15px;
+    border-top: 1px solid #DDDDDD;
+    background-color: #F4F4F4;
+    font-weight: 700;
+    border-radius: 0 0 4px 4px;
+    text-align: right;
+}
+
+.ss-overlayer-container-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #DDDDDD;
+    background-color: #F4F4F4;
+    font-weight: 700;
+    font-size: 120%;
+    border-radius: 4px 4px 0 0;
+}
+
+/* THIS CSS USED FOR CONFIRMATION BOX END */
+
+.mandatory:after {
+    content: " *";
+    color: red;
+}
+
+
+.figerror-container {
+    position: absolute;
+    right: 40px;
+    top: 60px;
+    height: 0%;
+    background-color: transparent;
+    z-index: 101;
+}
+
+    .figerror-container.open {
+        height: 80%;
+    }
+
+        .figerror-container.open .figerror {
+            width: 300px;
+            opacity: 1;
+        }
+
+        .figerror-container.open button {
+            border-bottom: none;
+            border-bottom-left-radius: 0;
+            font-weight: 700;
+        }
+
+    .figerror-container button,
+    .figerror-container .figerror {
+        border-radius: 0;
+        background-color: #f7e3e1;
+        border: 2px solid #f5a59c;
+        color: #A45;
+    }
+
+    .figerror-container button {
+        outline: none;
+        padding: 5px 10px;
+    }
+
+    .figerror-container .figerror {
+        transition: all 0.2s linear;
+        position: absolute;
+        right: 0;
+        width: 0;
+        opacity: 0;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+        margin-top: -2px;
+        box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);
+    }
+
+.figerror-body {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+    padding: 15px;
+}
+
+    .figerror-body ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-weight: 700;
+    }
+
+    .figerror-body h4 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .figerror-body > ul > li {
+        margin-bottom: 10px;
+    }
+
+        .figerror-body > ul > li:not(:last-child) {
+            border-bottom: 1px solid #A45;
+            padding-bottom: 10px;
+        }
+
+    .figerror-body ul ul {
+        list-style: decimal;
+        padding-left: 25px;
+        font-weight: normal;
+    }
+
+        .figerror-body ul ul ul {
+            font-weight: normal;
+            list-style: lower-roman;
+            padding-left: 15px;
+        }
+
+    .figerror-body > ul > li.warning, .figerror-body > ul > li.warning * {
+        color: #555;
+    }
+/********************FILE UPLOAD**********************/
+
+
+.fileuploader {
+    border: 1px solid rgba(0,0,0,0.2);
+    background-color: white;
+    height: 213px;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    border-radius: 3px;
+}
+
+    .fileuploader:before,
+    .fileuploader:after {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        font-weight: 600;
+        padding: 5px;
+        z-index: -1;
+    }
+
+
+    .fileuploader:before {
+        content: 'Select a file to upload';
+        bottom: 15px;
+        color: #17679b;
+    }
+
+    .fileuploader:after {
+        content: '\f01b';
+        font-family: FontAwesome;
+        bottom: 18%;
+        font-size: 100px;
+        color: #598563;
+    }
+
+    .fileuploader [type="file"] {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .fileuploader ul {
+        position: absolute;
+        top: 100%;
+        margin-top: 15px;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: block;
+        width: 100%;
+    }
+
+        .fileuploader ul li {
+            padding: 8px;
+            border-radius: 3px;
+            background-color: #c9eaef;
+            border: 1px solid #b5e1e8;
+            font-weight: normal;
+            margin: 10px 0 0 0;
+        }
+
+            .fileuploader ul li:last-child {
+                margin-bottom: 20px;
+            }
+
+
+
+/*DATE TIME*/
+
+.months, .dates, .years, .hours, .minutes, .seconds {
+    position: relative;
+    float: left;
+    margin-right: 7px;
+}
+
+    .months input[type],
+    .dates input[type],
+    .years input[type],
+    .hours input[type],
+    .minutes input[type],
+    .seconds input[type],
+    .months select,
+    .dates select,
+    .years select,
+    .hours select,
+    .minutes select,
+    .seconds select {
+        width: 55px;
+        height: 33px;
+        text-align: center;
+    }
+
+    .years input[type],
+    .years select {
+        width: 70px;
+    }
+
+    .months:before, .dates:before, .years:before,
+    .months::after, .dates:after, .years:after,
+    .hours:before, .minutes:before, .seconds:before,
+    .hours::after, .minutes:after, .seconds:after {
+        position: absolute;
+        font-size: 80%;
+    }
+
+    .months:before, .dates:before, .years:before,
+    .hours:before, .minutes:before, .seconds:before {
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        margin-top: -3px;
+    }
+
+    .months:after, .dates:after, .years:after,
+    .hours:after, .minutes:after, .seconds:after {
+        right: 0%;
+        top: 50%;
+        margin-top: -8px;
+        margin-right: -5px;
+    }
+
+    .hours:before {
+        content: 'HH';
+    }
+
+    .minutes:before {
+        content: 'MI';
+    }
+
+    .seconds:before {
+        content: 'SS';
+    }
+
+    .months:before {
+        content: 'MM';
+    }
+
+    .dates:before {
+        content: 'DD';
+    }
+
+    .years:before {
+        content: 'YYYY';
+    }
+
+    .months:after, .dates:after {
+        content: '/';
+    }
+
+    .hours:after {
+        content: ':';
+    }
+
+
+/*FIG LEGEND START*/
+
+.figlegend {
+    margin: auto;
+    list-style: none;
+    border: 1px solid #888;
+    padding: 7px;
+    float: right;
+    clear: both;
+    border-radius: 0px;
+    /*margin-left: 100%;
+    transform: translateX(-100%);*/
+    font-size: 85%;
+    background: white;
+}
+
+    .figlegend li {
+        display: inline-block;
+        position: relative;
+        padding: 0 5px 0 25px;
+        font-weight: normal;
+        cursor: pointer;
+    }
+
+
+
+        .figlegend li:before {
+            content: '';
+            position: absolute;
+            height: 8px;
+            width: 20px;
+            left: 0;
+            top: 50%;
+            margin-top: -4px;
+            border-radius: 0px;
+            border: 4px solid transparent;
+            outline: 1px solid #999;
+            outline-offset: 1px;
+        }
+
+        .figlegend li.legendred:before,
+        .figlegend li.legendred {
+            color: red;
+            border-color: red;
+        }
+
+        .figlegend li.legendgreen:before,
+        .figlegend li.legendgreen {
+            color: green;
+            border-color: green;
+        }
+
+        .figlegend li.legendyellow:before,
+        .figlegend li.legendyellow {
+            color: yellow;
+        }
+
+        .figlegend li.legendblack:before,
+        .figlegend li.legendblack {
+            color: black;
+            border-color: black;
+        }
+
+        .figlegend li.legendlightblue:before,
+        .figlegend li.legendlightblue {
+            color: #428bca;
+            border-color: #428bca;
+        }
+
+
+.fig {
+    font-style: normal;
+    font-size: 22px;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.fig-clear:before {
+    content: 'Ⓒ';
+}
+
+
+.highlighedquestion {
+    position: relative;
+    background-color: #006699;
+    color: #FFF;
+    border-radius: 3px;
+}
+
+    .highlighedquestion:after {
+        position: absolute;
+        content: '';
+        border: 8px solid transparent;
+        border-left-color: #006699;
+        left: 100%;
+        top: 6px;
+    }
+
+.figbadge {
+    position: absolute;
+    left: 100%;
+    bottom: 50%;
+    z-index: 111111;
+    margin-left: -28px;
+    margin-bottom: -8px;
+}
+
+    .figbadge:not(:empty) ~ a {
+        padding-right: 30px;
+    }
+
+/*WEBTOOL CSS*/
+[id$="_DataCollectionFormPopup"] .modal-content {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+[id$="_DataCollectionFormPopup"] .modal-dialog {
+    padding: 15px !important;
+}
+
+[id$="_DataCollectionFormPopup"] span.input-icon {
+    display: block;
+}
+
+[id$="_DataCollectionFormPopup"] .icon-time + .icon-calendar {
+    right: 20px !important;
+}
+
+[id$="_DataCollectionFormPopup"] .figerror-container .fa-envelope:before {
+    content: "\f067";
+}
+
+[id$="_DataCollectionFormPopup"] .figerror-container.open .fa-envelope:before {
+    content: "\f068";
+}
+
+[id$="_DataCollectionFormPopup"] .questioninstruction span {
+    color: #a45;
+    font-weight: 600;
+}
+
+
+.m-b-1 {
+    margin-bottom: 1px;
+}
+
+[id$="_DataCollectionFormPopup"] .form-group > label[class*="col-"] {
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+.red {
+    color: red;
+}
+
+[id$="_DataCollectionFormPopup"] .figinputerror {
+    border-color: #A45 !important;
+}
+
+[id$="_DataCollectionFormPopup"] .figradio .figinputerror:not(:checked) + span:before,
+[id$="_DataCollectionFormPopup"] .figcheckbox .figinputerror:not(:checked) + span:before {
+    color: #A45 !important;
+    border-color: #A45 !important;
+}
+/*WEBTOOL CSS*/
+
+
+.ss-overlayer ~ .datepicker, .ss-overlayer ~ .datepicker-dropdown {
+    z-index: 100000000001 !important;
+}
+
+
+#tblProvider thead:first-child tr:first-child th {
+    background-color: #6faed9 !important;
+}
+
+#tblLocation thead:first-child tr:first-child th {
+    background-color: #6faed9 !important;
+}
+
+#tblAdministrator thead:first-child tr:first-child th {
+    background-color: #6faed9 !important;
+}
+
+#tblProvider_wrapper .row:first-child {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+}
+
+#tblProvider_wrapper .row:last-child {
+    border-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+#tblProvider_wrapper .pagination:first-child {
+    margin: 0px;
+    margin-top: 2%;
+}
+
+#tblAdministrator_wrapper .row:first-child {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+}
+
+#tblAdministrator_wrapper .row:last-child {
+    border-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+#tblAdministrator_wrapper .pagination:first-child {
+    margin: 0px;
+    margin-top: 2%;
+}
+
+#tblLocation_wrapper .row:first-child {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+}
+
+#tblLocation_wrapper .row:last-child {
+    border-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+#tblLocation_wrapper .pagination:first-child {
+    margin: 0px;
+    margin-top: 2%;
+}

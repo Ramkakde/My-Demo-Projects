@@ -1,0 +1,839 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Common.BestPractical.DataAccess</name>
+    </assembly>
+    <members>
+        <member name="T:Common.BestPractical.DataAccess.Data.CustomFieldsHolder">
+            <summary>
+            Entity with custom fields.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Data.ICustomFieldsHolder">
+            <summary>
+            Entity with custom fields interface.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.ICustomFieldsHolder.CustomFields">
+            <summary>
+            Custom fields.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.CustomFieldsHolder.CustomFields">
+            <summary>
+            Custom fields.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Data.Queue">
+            <summary>
+            Tickets queue.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Queue.ID">
+            <summary>
+            ID.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Queue.Name">
+            <summary>
+            Name.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Queue.Description">
+            <summary>
+            Description.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.RTClient">
+            <summary>
+            Best Practical RT client.
+            </summary>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.#ctor(System.String)">
+            <summary>
+            Creates new instance.
+            </summary>
+            <param name="baseAddress">Base site address.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.Logon(System.String,System.String)">
+            <summary>
+            Logon to system.
+            </summary>
+            <param name="login">Login.</param>
+            <param name="password">Password.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.Logout">
+            <summary>
+            Logout from system.
+            </summary>
+            <remarks>Relogin not working even on instance recreating.</remarks>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.LoadAdditionalDataAsync(System.Collections.Generic.IDictionary{System.Int32,System.Collections.Generic.IList{System.String}})">
+            <summary>
+            Load users list and custom fields enum values asynchronously.
+            </summary>
+            <param name="customFieldsEnums">Custom fields to load dictionary.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.LoadAdditionalData(System.Collections.Generic.IDictionary{System.Int32,System.Collections.Generic.IList{System.String}})">
+            <summary>
+            Load users list and custom fields enum values.
+            </summary>
+            <param name="customFieldsEnums">Custom fields to load dictionary.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.AddHistoryEntryAsync(Common.BestPractical.DataAccess.Data.Ticket,Common.BestPractical.DataAccess.Data.HistoryEntry,System.Threading.CancellationToken)">
+            <summary>
+            Add history entry to ticket asynchronously.
+            </summary>
+            <param name="ticket">Ticket.</param>
+            <param name="entity">History entry.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.AddHistoryEntry(Common.BestPractical.DataAccess.Data.Ticket,Common.BestPractical.DataAccess.Data.HistoryEntry)">
+            <summary>
+            Add history entry to ticket.
+            </summary>
+            <param name="ticket">Ticket.</param>
+            <param name="entity">History entry.</param>
+            <remarks>Only first attachment used if exist due to system API limitation.</remarks>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.AddParentLinkEntry(Common.BestPractical.DataAccess.Data.Ticket,Common.BestPractical.DataAccess.Data.HistoryEntry)">
+            <summary>
+            Add parent ticket.
+            </summary>
+            <param name="ticket">Ticket.</param>
+            <param name="entity">History entry.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.AddTicketAsync(Common.BestPractical.DataAccess.Data.Ticket,System.Threading.CancellationToken)">
+            <summary>
+            Create ticket asynchronously.
+            </summary>
+            <param name="entity">Ticket.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.AddTicket(Common.BestPractical.DataAccess.Data.Ticket)">
+            <summary>
+            Create ticket.
+            </summary>
+            <param name="entity">Ticket.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.EditTicketAsync(Common.BestPractical.DataAccess.Data.Ticket,System.Threading.CancellationToken)">
+            <summary>
+            Edit ticket (some fields only).
+            </summary>
+            <param name="entity">Ticket.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.EditTicketAsync``1(``0,System.Threading.CancellationToken)">
+            <summary>
+            Edit ticket (some fields only).
+            </summary>
+            <typeparam name="T">Ticket-based entity type.</typeparam>
+            <param name="entity">Ticket.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.EditTicket(Common.BestPractical.DataAccess.Data.Ticket)">
+            <summary>
+            Edit ticket (some fields only).
+            </summary>
+            <param name="entity">Ticket.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.EditTicket``1(``0)">
+            <summary>
+            Edit ticket (some fields only).
+            </summary>
+            <typeparam name="T">Ticket-based entity type.</typeparam>
+            <param name="entity">Ticket.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchAttachmentAsync(Common.BestPractical.DataAccess.Data.Attachment,System.Threading.CancellationToken)">
+            <summary>
+            Load attachment data asynchronously.
+            </summary>
+            <param name="entity">Attachment.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchAttachment(Common.BestPractical.DataAccess.Data.Attachment)">
+            <summary>
+            Load attachment data.
+            </summary>
+            <param name="entity">Attachment.</param>
+            <returns>Attachment.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchHistoryEntryAsync(Common.BestPractical.DataAccess.Data.HistoryEntry,System.Threading.CancellationToken)">
+            <summary>
+            Fetch history entry data asynchronously.
+            </summary>
+            <param name="entity">History entry.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchHistoryEntry(Common.BestPractical.DataAccess.Data.HistoryEntry)">
+            <summary>
+            Fetch history entry data.
+            </summary>
+            <param name="entity">History entry.</param>
+            <returns>History entry.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchTicketAsync(Common.BestPractical.DataAccess.Data.Ticket,System.Threading.CancellationToken)">
+            <summary>
+            Fetch ticket data asynchronously.
+            </summary>
+            <param name="entity">Ticket.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchTicketAsync``1(``0,System.Threading.CancellationToken)">
+            <summary>
+            Fetch ticket data asynchronously.
+            </summary>
+            <typeparam name="T">Ticket-based entity.</typeparam>
+            <param name="entity">Ticket.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchTicket(Common.BestPractical.DataAccess.Data.Ticket)">
+            <summary>
+            Fetch ticket data.
+            </summary>
+            <param name="entity">Ticket.</param>
+            <returns>Ticket.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchTicket``1(``0)">
+            <summary>
+            Fetch ticket data.
+            </summary>
+            <typeparam name="T">Ticket-based entity.</typeparam>
+            <param name="entity">Ticket.</param>
+            <returns>Ticket.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchUserAsync(Common.BestPractical.DataAccess.Data.User,System.Threading.CancellationToken)">
+            <summary>
+            Fetch user data asynchronously.
+            </summary>
+            <param name="entity">User.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchUser(Common.BestPractical.DataAccess.Data.User)">
+            <summary>
+            Fetch user data.
+            </summary>
+            <param name="entity">User.</param>
+            <returns>User.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchQueueAsync(Common.BestPractical.DataAccess.Data.Queue,System.Threading.CancellationToken)">
+            <summary>
+            Fetch queue data asynchronously.
+            </summary>
+            <param name="entity">Queue.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Queue.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.FetchQueue(Common.BestPractical.DataAccess.Data.Queue)">
+            <summary>
+            Fetch queue data.
+            </summary>
+            <param name="entity">Queue.</param>
+            <returns>Queue.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.LoadTicketHistoryListAsync(Common.BestPractical.DataAccess.Data.Ticket,System.Threading.CancellationToken)">
+            <summary>
+            Load ticket history list asynchronously.
+            </summary>
+            <param name="entity">Ticket.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.LoadTicketHistoryList(Common.BestPractical.DataAccess.Data.Ticket)">
+            <summary>
+            Load ticket history list.
+            </summary>
+            <param name="entity">Ticket.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.LoadTicketHistoryAsync(Common.BestPractical.DataAccess.Data.Ticket,System.Threading.CancellationToken)">
+            <summary>
+            Load ticket history asynchronously.
+            </summary>
+            <param name="entity">Ticket.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.LoadTicketHistory(Common.BestPractical.DataAccess.Data.Ticket)">
+            <summary>
+            Load ticket history.
+            </summary>
+            <param name="entity">Ticket.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.LoadTicketsAsync(Common.BestPractical.DataAccess.Data.LoadTicketsTerms,System.Threading.CancellationToken)">
+            <summary>
+            Load tickets asynchronously (w/o history).
+            </summary>
+            <param name="terms">Load terms.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Tickets list.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.LoadTicketsAsync``1(Common.BestPractical.DataAccess.Data.LoadTicketsTerms,System.Threading.CancellationToken)">
+            <summary>
+            Load tickets asynchronously (w/o history).
+            </summary>
+            <param name="terms">Load terms.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>Tickets list.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.LoadTickets(Common.BestPractical.DataAccess.Data.LoadTicketsTerms)">
+            <summary>
+            Load tickets (w/o history).
+            </summary>
+            <param name="terms">Load terms.</param>
+            <returns>Tickets list.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.RTClient.LoadTickets``1(Common.BestPractical.DataAccess.Data.LoadTicketsTerms)">
+            <summary>
+            Load tickets (w/o history).
+            </summary>
+            <typeparam name="T">Ticket-base entity.</typeparam>
+            <param name="terms">Load terms.</param>
+            <returns>Tickets list.</returns>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.RTClient.Authorized">
+            <summary>
+            Client authorized.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.RTClient.Users">
+            <summary>
+            System users.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.RTClient.Queues">
+            <summary>
+            System queues.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Data.Attachment">
+            <summary>
+            History entry attachment.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Attachment.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Attachment.TicketID">
+            <summary>
+            Ticket ID.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Attachment.FileName">
+            <summary>
+            File name.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Attachment.Content">
+            <summary>
+            File content.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Data.HistoryEntry">
+            <summary>
+            Ticket history entry.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.HistoryEntry.Readable">
+            <summary>
+            Entry is readable.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.HistoryEntry.ID">
+            <summary>
+            ID.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.HistoryEntry.TicketID">
+            <summary>
+            Ticket ID.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.HistoryEntry.Type">
+            <summary>
+            Type.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.HistoryEntry.Content">
+            <summary>
+            Content.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.HistoryEntry.Creator">
+            <summary>
+            Creator.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.HistoryEntry.Created">
+            <summary>
+            Create date.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.HistoryEntry.Attachments">
+            <summary>
+            Attachemnts list.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Data.HistoryEntryType">
+            <summary>
+            History entry type.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.MessageCreate">
+            <summary>
+            Ticket created.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.CustomField">
+            <summary>
+            Custom field changed.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.EmailRecordGeneral">
+            <summary>
+            Email sended.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.Status">
+            <summary>
+            Status changed.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.EmailRecordComment">
+            <summary>
+            Comment email sended.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.MessageRecord">
+            <summary>
+            Reply to ticket.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.MessageComment">
+            <summary>
+            Comment to ticket. Not seen by external users.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.Priority">
+            <summary>
+            Ticket priority changed.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.OwnerGive">
+            <summary>
+            Ticket was given to one.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.OwnerSteal">
+            <summary>
+            Ticket was stealed by one.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.OwnerTake">
+            <summary>
+            Ticket was taken by one.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.OwnerUntake">
+            <summary>
+            Ticket was untaken by one.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.WatcherAdd">
+            <summary>
+            Watcher was added to ticket.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.WatcherRemove">
+            <summary>
+            Watcher was deleted from ticket.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.LinkAdd">
+            <summary>
+            Link to another ticket added.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.LinkRemove">
+            <summary>
+            Link to another ticket deleted.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.ReminderAdd">
+            <summary>
+            Reminder was added to ticket.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.ReminderOpened">
+            <summary>
+            Reminder was reopened.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.ReminderRemove">
+            <summary>
+            Reminder was removed from ticket.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.Set">
+            <summary>
+            Set some field of ticket.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.Force">
+            <summary>
+            Set force some field of ticket.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.Subject">
+            <summary>
+            Subject changed.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.Told">
+            <summary>
+            Told.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.HistoryEntryType.PurgeTransaction">
+            <summary>
+            Transaction purged.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Data.LoadTicketsTerms">
+            <summary>
+            Load tickets terms.
+            </summary>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.Data.LoadTicketsTerms.Load(Common.BestPractical.DataAccess.Data.LoadTicketsTerms)">
+            <summary>
+            Load terms from another instance.
+            </summary>
+            <param name="terms">Another instance.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.Data.LoadTicketsTerms.Store(Common.BestPractical.DataAccess.Data.LoadTicketsTerms)">
+            <summary>
+            Store terms to another instance.
+            </summary>
+            <param name="terms">Another instance.</param>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.LoadTicketsTerms.ID">
+            <summary>
+            Ticket ID (global).
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.LoadTicketsTerms.Status">
+            <summary>
+            Ticket status (local).
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.LoadTicketsTerms.CustomStatus">
+            <summary>
+            Custom ticket status (local).
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.LoadTicketsTerms.Title">
+            <summary>
+            Ticket title (global).
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Serialization.SerializeCodeAttribute">
+            <summary>
+            Attribute for define serialization code.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Serialization.SerializeCodeAttribute.Value">
+            <summary>
+            Serizliation code.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Data.Ticket">
+            <summary>
+            Ticket.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.ID">
+            <summary>
+            Ticket ID (number).
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.Title">
+            <summary>
+            Title.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.Queue">
+            <summary>
+            Queue.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.Owner">
+            <summary>
+            Owner.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.Status">
+            <summary>
+            Status.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.CustomStatus">
+            <summary>
+            Custom status code.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.Creator">
+            <summary>
+            Creator.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.Created">
+            <summary>
+            Create date.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.Changed">
+            <summary>
+            change date.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.Closed">
+            <summary>
+            Close date.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.Due">
+            <summary>
+            Due date.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.MailCopy">
+            <summary>
+            Mail list for copy.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.MailCopyAdmin">
+            <summary>
+            Mail list for admin copy.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.Ticket.History">
+            <summary>
+            History.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Data.User">
+            <summary>
+            System user.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.User.ID">
+            <summary>
+            ID.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.User.Login">
+            <summary>
+            Login.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.User.Mail">
+            <summary>
+            Mail address.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.User.Name">
+            <summary>
+            Name.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Data.ActionException">
+            <summary>
+            Web action exception.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.ActionException.Response">
+            <summary>
+            Raw response.
+            </summary>
+        </member>
+        <member name="P:Common.BestPractical.DataAccess.Data.ActionException.Code">
+            <summary>
+            Status code.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Serialization.DataMemberIdentityAttribute">
+            <summary>
+            Attribute for identifying data memeber as identity.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Data.TicketStatus">
+            <summary>
+            Ticket status.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.TicketStatus.Custom">
+            <summary>
+            Custom status.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.TicketStatus.New">
+            <summary>
+            New.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.TicketStatus.Opened">
+            <summary>
+            Open.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.TicketStatus.Stalled">
+            <summary>
+            Stalled.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.TicketStatus.Resolved">
+            <summary>
+            Resolved.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.TicketStatus.Rejected">
+            <summary>
+            Rejected.
+            </summary>
+        </member>
+        <member name="F:Common.BestPractical.DataAccess.Data.TicketStatus.Deleted">
+            <summary>
+            Deleted.
+            </summary>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.ExtensionsBestPractical">
+            <summary>
+            Additional actions for data accessing.
+            </summary>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.ExtensionsBestPractical.LoadEnumValues(HtmlAgilityPack.HtmlDocument,System.String)">
+            <summary>
+            Load values for specified enum from HTML document.
+            </summary>
+            <param name="document">HTML docuement instance.</param>
+            <param name="code">Enum code.</param>
+            <returns>Enum values.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.ExtensionsBestPractical.FetchCanonicalIDValue(System.String)">
+            <summary>
+            Fetch Best Practical identity value from string.
+            </summary>
+            <param name="value">String value.</param>
+            <returns>Real value.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.ExtensionsBestPractical.GetValueBestPractical(System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Serialize entity property value.
+            </summary>
+            <param name="info">Property information.</param>
+            <param name="entity">Entity.</param>
+            <returns>Serialized value.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.ExtensionsBestPractical.SetValueBestPractical(System.Reflection.PropertyInfo,System.Object,System.String)">
+            <summary>
+            Deserialize entity property value.
+            </summary>
+            <param name="info">Property information.</param>
+            <param name="entity">Entity.</param>
+            <param name="value">Serialized value.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.ExtensionsBestPractical.ParseEntityLine(System.String)">
+            <summary>
+            Split serialized entity line to key and value.
+            </summary>
+            <param name="line">Serialized line.</param>
+            <returns>Key and value.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.ExtensionsBestPractical.CheckStatusCodeBestPractical(Microsoft.Http.HttpResponseMessage)">
+            <summary>
+            Check Best Practical action status code.
+            </summary>
+            <param name="message">HTTP response message.</param>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.ExtensionsBestPractical.FetchStatusCodeBestPractical(Microsoft.Http.HttpResponseMessage)">
+            <summary>
+            Fetch Best Practical action status code.
+            </summary>
+            <param name="message">HTTP response message.</param>
+            <returns>Status code.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.ExtensionsBestPractical.AuthorizeBestPractical(Microsoft.Http.HttpClient,System.String,System.String)">
+            <summary>
+            Authenticate to Best Practical site.
+            </summary>
+            <param name="client">HTTP client instance.</param>
+            <param name="login">Login.</param>
+            <param name="password">Password.</param>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Serialization.DataContractBestPracticalSerializer`1">
+            <summary>
+            Best Practical data contract serializer/deserializer.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.Serialization.DataContractBestPracticalSerializer`1.ReadObject(Microsoft.Http.HttpContent)">
+            <summary>
+            Deserialize entity from HTTP content.
+            </summary>
+            <param name="content">HTTP content.</param>
+            <returns>Entity.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.Serialization.DataContractBestPracticalSerializer`1.ReadObjectBinary(Microsoft.Http.HttpContent)">
+            <summary>
+            Deserialize binary data from HTTP content.
+            </summary>
+            <param name="content">HTTP content.</param>
+            <returns>Binary data.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.Serialization.DataContractBestPracticalSerializer`1.ReadObjectsIdentities(Microsoft.Http.HttpContent)">
+            <summary>
+            Create list of objects ID from HTTP content.
+            </summary>
+            <param name="content">HTTP content.</param>
+            <returns>List of objects ID.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.Serialization.DataContractBestPracticalSerializer`1.ReadObjects(Microsoft.Http.HttpContent)">
+            <summary>
+            Deserialize objects list from HTTP content.
+            </summary>
+            <param name="content">HTTP content.</param>
+            <returns>Objects list.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.Serialization.DataContractBestPracticalSerializer`1.WriteObject(`0)">
+            <summary>
+            Serialize object in HTTP content.
+            </summary>
+            <param name="entity">Entity.</param>
+            <returns>HTTP content.</returns>
+        </member>
+        <member name="M:Common.BestPractical.DataAccess.Serialization.DataContractBestPracticalSerializer`1.WriteObject(`0,System.Byte[])">
+            <summary>
+            Serialize object in HTTP content.
+            </summary>
+            <param name="entity">Entity.</param>
+            <param name="attachment">Binary attachment.</param>
+            <returns>HTTP content.</returns>
+        </member>
+        <member name="T:Common.BestPractical.DataAccess.Serialization.Extensions">
+            <summary>
+            Help extension.
+            </summary>
+        </member>
+    </members>
+</doc>

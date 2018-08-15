@@ -1,0 +1,13 @@
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\bin\CommonService.dll.config
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\bin\CommonService.dll
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\bin\CommonService.pdb
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\bin\Business.dll
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\bin\Model.dll
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\bin\DataAccess.dll
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\bin\MySql.Data.dll
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\bin\Business.pdb
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\bin\Model.pdb
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\bin\DataAccess.pdb
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\obj\Debug\ContactService.csprojResolveAssemblyReference.cache
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\obj\Debug\CommonService.dll
+Z:\Ram\Daily Work\Project\ContactWebService\ContactService\obj\Debug\CommonService.pdb

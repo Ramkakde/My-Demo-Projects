@@ -1,0 +1,10 @@
+Z:\Ram\Daily Work\Project\ContactWebService\DataAccess\bin\Debug\DataAccess.dll.config
+Z:\Ram\Daily Work\Project\ContactWebService\DataAccess\bin\Debug\DataAccess.dll
+Z:\Ram\Daily Work\Project\ContactWebService\DataAccess\bin\Debug\DataAccess.pdb
+Z:\Ram\Daily Work\Project\ContactWebService\DataAccess\bin\Debug\itextsharp.dll
+Z:\Ram\Daily Work\Project\ContactWebService\DataAccess\bin\Debug\Model.dll
+Z:\Ram\Daily Work\Project\ContactWebService\DataAccess\bin\Debug\MySql.Data.dll
+Z:\Ram\Daily Work\Project\ContactWebService\DataAccess\bin\Debug\Model.pdb
+Z:\Ram\Daily Work\Project\ContactWebService\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+Z:\Ram\Daily Work\Project\ContactWebService\DataAccess\obj\Debug\DataAccess.dll
+Z:\Ram\Daily Work\Project\ContactWebService\DataAccess\obj\Debug\DataAccess.pdb
