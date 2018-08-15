@@ -1,0 +1,98 @@
+######################################################################################
+##		          Contact management Application            	        ## 
+######################################################################################
+
+Enhancements:
+-------------
+  This is kind of Setup the application  
+
+   a) Reported by
+   ----------------
+   Evolent Health 
+   
+   b) Analysis and Solution
+   -------------------------
+    Created the Web application for managing contact information by using asp.net Restful service.  
+ 
+
+Bug Fixes
+-------
+ NA
+
+Field/Support defect fixes:
+---------------------------
+NA
+
+Admin UI:
+---------
+NA
+
+DB Schema:
+----------
+DB Schema applicable attached inclsed fline name as "DB script".
+
+MIB:
+----
+NA
+
+Release Contents/Application:
+-----------------
+Web application and Rest Wcf Service 
+
+Software Configuration:
+-----------------------
+NA
+
+User Documentation:
+-------------------
+NA
+
+Impacted Services
+--------------------
+NA
+
+Instructions
+--------------------
+a) Create Databse with instractions    
+b) Add/Update new connection string in WCF Service web.config.
+c) Run the Service and Browse the Service file. 
+d) Cpoy the Servicepath and apply globle variable "_baseServiceURL" in Contact.js.
+e) Run the web application.
+f) Verify functionality like
+   1) Add Contact.
+   2) Get Contact information.
+   3) Update Contact information.
+   4) Delete Contact information.
+
+ 
+
+
+Additional Instructions
+--------------------
+# Build Web application version with .Net Framework 4.5
+# Database Used SQL server 2012
+  
+
+
+GIT Release Package Path
+--------------------
+ 
+
+How to Apply:
+-------------
+1. Execute the SQL statment which given in this release package. 
+    1. Make sure execute sql script on mentioned/new Databse. 
+	1. File Path.(DB Scripts)
+ 
+5. Verify the application. 
+         # Verify in the Contact informstion as per the given requirenment.
+ 
+
+ 
+Misc:
+-----
+NA
+
+######################################################################################
+#          Contact management Application           #
+######################################################################################
